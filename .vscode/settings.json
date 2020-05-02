@@ -1,0 +1,5 @@
+{
+    "liveServer.settings.CustomBrowser": "firefox",
+    "liveServer.settings.host": "localhost:8000",
+    "liveServer.settings.NoBrowser": true
+}
