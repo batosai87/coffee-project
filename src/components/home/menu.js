@@ -2,12 +2,24 @@ import React, { Component } from 'react'
 import Title from "../globals/title"
 import Img from "gatsby-image"
 
+const getCategories = items => {
+    let tempItems = items.map(items => {
+        return items.node.category;
+    });
+    let tempCategories = new Set(tempItems);
+    let categories = Array.from(tempCategories);
+    categories = ["all", ...categories];
+    return categories;
+}
+
 export default class menu extends Component {
     constructor(props){
         super(props)
         this.state = {
             items: props.items.edges,
-            CoffeeItems: props.items.edges
+            CoffeeItems: props.items.edges,
+            categories:getCategories(props.items.edges)
+
         }
     }
     render() {
@@ -37,7 +49,7 @@ export default class menu extends Component {
                                 <small>{node.title}</small>
                                         </h6>
                                         <h6 className="mb-0 text-yellow">
-                                Rp<small>{node.harga}</small>
+                                <small>Rp {node.harga}</small>
                                         </h6>
                                         </div>
                                     <p className="text-muted">
