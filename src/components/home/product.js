@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
-export default function product({product}) {
+export default function product({ product }) {
     return (
         <div className="col-10 col-sm-8 col-md-6 col-lg-4 mx-auto my-3">
             <div className="card" style={{ minHeight: "100%" }}>
@@ -10,7 +10,14 @@ export default function product({product}) {
                 <div className="card-body text-center">
                     <h6>{product.title}</h6>
                     <h6>Rp {product.harga}</h6>
-                    <button className="btn btn-yellow mt-3 text-capitalize">
+                    <button className="btn btn-yellow mt-3 text-capitalize 
+                    snipcart-add-item
+                    "
+                        data-item-id={product.id}
+                        data-item-price={product.harga}
+                        data-item-url="https://eling.netlify.app/"
+                        data-item-image={product.image.fluid.src}
+                        data-item-name={product.title}>
                         add to cart</button>
                 </div>
             </div>
