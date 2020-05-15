@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 import BackgroundSection from '../components/globals/backgroundsection'
 import Info from "../components/home/info"
 import Menu from '../components/home/menu'
+import Products from '../components/home/products'
+
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -13,6 +15,7 @@ const IndexPage = ({ data }) => (
     title="eling coffee's" /> 
     <Info />
     <Menu items={data.menu}/>
+    <Products />
     </Layout>
 )
 
